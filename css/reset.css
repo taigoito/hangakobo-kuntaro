@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/* Last Updated:2016-08-06 */
+
+html {
+	background: transparent;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body, div, header, footer, nav, main, article, section, aside, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, li {
+	display: block;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img, input, select, table, caption, tbody, thead, tfoot, th, tr, td {
+	vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6, th {
+	font-weight: 400;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:before, .clearfix:after {
+	display: table;
+	content: "";
+}
+
+.clearfix:after {
+	clear: both;
+}

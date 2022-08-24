@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>薫太郎ギャラリー | Kuntaro Gallery</title>
+	<meta name="description" content="画家 早川薫太郎のWEBギャラリー。銅版画、木版画、ドローイング、パステル画、及び写真等、300点以上を収録。">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="shortcut icon" href="./images/favicon/favicon.gif">
+	<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-140782462-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+
+<body>
+  <noscript>このWebページはJavaScriptを有効にすることで正常に動作します。</noscript>
+	<header class="cover-unit">
+		<div class="cover-section">
+			<h1><img src="./images/theme03/theme03_001.jpg" alt="Kuntaro Gallery"></h1>
+			<div id="entrance">
+				<h2>Kuntaro Gallery</h2>
+				<ul>
+					<li><a href="ja">日本語</a></li>
+					<li><a href="en">English</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main>
+		<nav>
+			<ul class="mainmenu">
+			</ul>
+			<script id="mainmenu-template-ja" type="text/template">
+				<% _.each(data, function(e, i){ %>
+					<li><a href="#<%= e.theme %>"><%= e.Japanese %></a></li>
+				<% }) %>
+				<li><a href="#all">全て再生</a></li>
+			</script>
+			<script id="mainmenu-template-en" type="text/template">
+				<% _.each(data, function(e, i){ %>
+					<li><a href="#<%= e.theme %>"><%= e.English %></a></li>
+				<% }) %>
+				<li><a href="#all">Play All</a></li>
+			</script>
+			<ul class="submenu">
+				<li><a class="about" href="#">このサイトについて</a></li>
+			</ul>
+		</nav>
+		<article id="gallery">
+			<div></div>
+		</article>
+		<aside id="thumb">
+			<div id="carousel">
+				<ul></ul>
+				<script id="carousel-template" type="text/template">
+					<% _.each(data, function(e, i){ %>
+						<% _.each(e.images, function(image, i){ %>
+							<li><a href="./images/<%= e.theme %>/<%= image %>" style="background-image:url(./images/<%= e.theme %>/<%= image %>)"</li>
+						<% }) %>
+					<% }) %>
+				</script>
+			</div>
+		</aside>
+		<aside id="about">
+			<div id="about-overlay"></div>
+			<div id="about-container">
+				<p>このサイトは、早川薫太郎の亡き後、
+					<br> その息子さん早川流吉氏に作品写真を提供して頂き、
+					<br> 早川薫太郎を慕う者によって制作されました。
+				</p>
+				<a id="about-back" href="#">戻る</a>
+			</div>
+		</aside>
+		<a id="slidebar-open" href="#">Menu</a>
+		<div id="slidebar-overlay"></div>
+		<div id="slidebar">
+			<div id="slidemenu">
+				<a id="slidebar-close" href="#">Close</a>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<small>&copy; 2016 Kuntaro Hayakawa</small>
+	</footer>
+	<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="./js/underscore.js"></script>
+	<script src="./js/gallery.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,374 @@
+@charset "utf-8";
+
+/***
+	s { width: 432px/480px, height: 432px/480px, margin: 24px }
+	m { width: 720px/768px, height: 432px/480px, margin: 24px }
+	l { width: 960px/1024px, height: 576px/640px, margin: 32px }
+***/
+
+html, body {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	color: #666;
+	font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+@media (min-width:768px) and (min-height:480px) {
+	body {
+		font-size: 14px;
+	}
+}
+
+.cover-unit {
+	display: table;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.cover-section {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+a {
+	color: #666;
+}
+a:hover, a:focus {
+	color: #339;
+}
+
+/* header */
+
+header {
+	width: 100%;
+	max-width: 720px;
+	min-height: 480px;
+}
+
+h1, #entrance {
+	display: inline-block;
+}
+
+h1 img {
+	width: 62.5%; /* 5 / 8 */
+	max-width: 480px;
+	height: auto;
+	margin: 0 auto;
+}
+
+#entrance h2 {
+	margin: 1em auto;
+	font-weight: bold;
+	font-size: 1.5em;
+	letter-spacing: 1px;
+}
+
+#entrance ul {
+	margin: 1em auto;
+	font-size: 1.17em;
+	font-weight: bold;
+}
+
+#entrance ul li {
+	display: inline-block;
+	padding: 0;
+}
+
+#entrance ul li:first-child:after {
+	content: "/";
+	margin: 0 .65em 0 1em;
+}
+
+#entrance a:hover, #entrance a:focus {
+	border-bottom: 1px solid #339;
+}
+
+/* main */
+
+main {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	max-width: 432px;
+	height: 432px;
+	margin: auto;
+}
+
+@media (min-width:768px) and (min-height:480px) {
+	main {
+		max-width: 720px;
+		height: 432px;
+	}
+}
+
+@media (min-width:1024px) and (min-height:640px) {
+	main {
+		max-width: 960px;
+		height: 576px;
+	}
+}
+
+/* gallery*/
+
+#gallery {
+	display: block;
+	position: relative;
+	width: 90%;
+	max-width: 432px;
+	height: 432px;
+	margin: 0 auto;
+}
+
+#gallery > div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-attachment: local;
+}
+
+@media (min-width:768px) and (min-height:480px) {
+	#gallery {
+		float: left;
+		margin: 0 24px;
+	}
+}
+
+@media (min-width:1024px) and (min-height:640px) {
+	#gallery {
+		max-width: 576px;
+		height: 576px;
+		margin: 0 32px;
+	}
+}
+
+/* thumb */
+
+#thumb {
+	display: none;
+}
+
+@media (min-width:768px) and (min-height:480px) {
+	#thumb {
+		display: block;
+		float: left;
+		width: 240px;
+		height: 450px;
+		margin-top: -9px; /* (432 - 450) / 2 */
+		overflow: hidden;
+	}
+	
+	#carousel {
+		width: 90px;
+		height: 630px;
+		margin: -90px auto 0; /* top = (450 - 630) / 2 */
+		overflow: hidden;
+	}
+	
+	#carousel ul {
+		height: 1170px; /* 13 * 90 */
+		margin-top: -270px;
+	}
+	
+	#carousel li {
+		padding: 5px;
+	}
+	
+	#carousel li:nth-child(7) {
+		padding: 2px;
+		border: 2px solid #339;
+		border-radius: 2px;
+		margin: 1px;
+	}
+	
+	#carousel a {
+		display: block;
+		width: 80px;
+		height: 80px;
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: local;
+	}
+}
+
+@media (min-width:1024px) and (min-height:640px) {
+	#thumb {
+		width: 160px;
+		height: 630px;
+		margin-top: -27px; /* (576 - 630) / 2 */
+	}
+	
+	#carousel {
+		margin-top: 0;
+	}
+}
+
+/* nav */
+
+nav {
+	display: none;
+}
+
+@media (min-width:1024px) and (min-height:640px) {
+	nav {
+		display: block;
+		float: left;
+		width: 160px;
+		height: 576px;
+	}
+	
+	nav .mainmenu li {
+		height: 2em;
+		line-height: 2;
+	}
+	
+	nav .mainmenu li a:hover, nav .mainmenu li a:focus {
+		border-bottom: 1px solid #339;
+	}
+}
+
+.mainmenu, .submenu {
+	padding: 24px 0;
+}
+
+.submenu {
+	font-size: .85em;
+}
+
+/* slidemenu */
+
+#slidebar-open, #slidebar-close {
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 24px;
+	font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Roboto, "Droid Sans", "メイリオ", Meiryo, sans-serif;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+#slidebar-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 100%;
+	background: transparent;
+	cursor: pointer;
+}
+
+#slidebar-overlay.active {
+	width: 100%;
+}
+
+#slidebar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 100%;
+	background: #666;
+	transition: all ease-in .4s;
+}
+
+#slidebar.active {
+	width: 200px;
+	transition: all ease-in .4s;
+}
+
+#slidemenu {
+	padding: 48px 36px 24px;
+	opacity: 0;
+	transition: opacity ease-in .2s;
+}
+
+#slidemenu.active {
+	opacity: 1;
+	transition: opacity ease-in .2s;
+}
+
+#slidemenu #slidebar-close {
+	display: none;
+}
+
+#slidemenu.active #slidebar-close {
+	display: block;
+}
+
+#slidemenu a {
+	color: #ccc;
+}
+
+#slidemenu a:hover, #slidemenu a.focus {
+	color: #66f
+}
+
+@media (min-width:1024px) and (min-height:640px) {
+	#slidebar-open, #slidebar-overlay, #slidebar {
+		display: none;
+	}
+}
+
+/* about */
+
+#about {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#about-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, .7);
+	cursor: pointer;
+}
+
+#about-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	max-width: 480px;
+	height: 120px;
+	margin: auto;
+	text-align: center;
+}
+
+#about-back {
+	display: block;
+	margin: 24px auto;
+}
+
+/* footer */
+
+footer {
+	position: fixed;
+	bottom: 15px;
+	width: 100%;
+	text-align: center;
+}
